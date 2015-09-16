@@ -1,0 +1,29 @@
+{
+  "name": "Total Zeit",
+  "version": "0.1",
+  "homepage": "http://www.totalzeit.com",
+  "authors": [
+    "Lewis Wade <lewis@totalzeit.com>"
+  ],
+  "description": "Total Zeit is an application for pilots to connect an share ride.",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-filter": "~0.5.5",
+    "angular-route": "~1.4.5",
+    "angularfire": "~1.1.2",
+    "firebase": "~2.2.9",
+    "jquery": "~2.1.4"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

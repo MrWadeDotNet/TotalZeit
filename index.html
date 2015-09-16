@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Time Zeit</title>
+    <link rel="stylesheet" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body ng-app="TotalZeit">
+
+<!-- Begin Navigation -->
+   <nav class="navbar-fixed-top">
+    <div class="row">
+      <div class='col-md-1'>
+        <img class="logo" src="imgs/logo.png">
+      </div>
+    </div>
+  </nav>
+ <!-- End Navigation -->
+<!-- Sidebar navigation -->
+<div class="sidebar_nav col-md-1">
+  <div class="sidebar_txt">
+    <ul>
+    <li>About</li>
+    <li></li>
+    <li></li>
+  </div>
+</div>
+<!-- End Sidebar Nav -->
+<!-- Begin Main Content Section -->
+<div class="maincontent col-md-7 col-md-offset-1" ng-view>
+
+</div>
+<!-- End Main Content Section -->
+
+<script src="lib/bower_components/angular/angular.min.js"></script>
+<script src="lib/bower_components/angular-route/angular-route.js"></script>
+<script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="lib/bower_components/firebase/firebase.js"></script>
+<script src="lib/bower_components/angularfire/dist/angularfire.js"></script>
+<script src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controllers.js"></script>
+</body>
+</html>
