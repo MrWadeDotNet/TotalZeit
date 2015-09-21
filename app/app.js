@@ -31,10 +31,11 @@ app.config(['$routeProvider', function($routeProvider) {
         return Auth.$requireAuth();
       }]
     }
+  }
 
  // Login Controller 
 
-  .controller('LoginCtrl', function($scope) {
+/*  .controller('LoginCtrl', function($scope) {
   var projectList = this;
   projectList.projects = projects;
-})
+    })*/
