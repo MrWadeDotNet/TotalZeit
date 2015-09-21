@@ -85,7 +85,7 @@ h1 {
   -moz-box-shadow: 0px 0px 5px #8a8a8a;
   box-shadow: 0px 0px 5px #8a8a8a;
   font-size: 20px;
-  color: #ffffff;
+  color: #FFFFFF;
   padding: 1px 20px;
   background-color: #009c08; }
 
@@ -100,7 +100,8 @@ input {
   display: block;
   width: 300px;
   border: none;
-  border-bottom: 1px solid #757575; }
+  border-bottom: 1px solid #757575;
+  color: #000000; }
 
 input:focus {
   outline: none; }
