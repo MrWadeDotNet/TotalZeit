@@ -9,7 +9,7 @@ app.run(["$rootScope", "$location", function($rootScope, $location) {
     }
   });
 }]);
-
+/*
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
     templateUrl: 'partials/feed.html',
@@ -32,7 +32,7 @@ app.config(['$routeProvider', function($routeProvider) {
       }]
     }
   }
-
+*/
  // Login Controller 
 
 /*  .controller('LoginCtrl', function($scope) {

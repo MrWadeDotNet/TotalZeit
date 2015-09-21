@@ -13,7 +13,8 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-top: 100px; }
+  padding-top: 100px;
+  color: #FFFFFF; }
 
 @font-face {
   font-family: Roboto;
@@ -52,13 +53,138 @@ body {
   list-style-type: none; }
 
 .maincontent {
-  background-color: #3B3B3B;
-  opacity: 0.2;
+  background-color: rgba(23, 23, 23, 0.7);
   width: 760px;
   height: 600px;
   padding: 10px;
   float: left;
   text-align: left;
   border-radius: 20px; }
+
+h1 {
+  color: #FFFFFF; }
+
+.inviteform {
+  padding-top: 75px; }
+
+.inviteform > .group {
+  text-align: center; }
+
+.enteremail {
+  color: red; }
+
+.success {
+  padding-top: 100px;
+  color: #FFFFFF; }
+
+.btn-style {
+  border: solid 1px #ebebeb;
+  border-radius: 11px 10px 10px 10px;
+  moz-border-radius: 11px 10px 10px 10px;
+  -webkit-box-shadow: 0px 0px 5px #8a8a8a;
+  -moz-box-shadow: 0px 0px 5px #8a8a8a;
+  box-shadow: 0px 0px 5px #8a8a8a;
+  font-size: 20px;
+  color: #ffffff;
+  padding: 1px 20px;
+  background-color: #009c08; }
+
+/* form starting stylings ------------------------------- */
+.group {
+  position: relative;
+  margin-bottom: 45px; }
+
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575; }
+
+input:focus {
+  outline: none; }
+
+/* LABEL ======================================= */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all; }
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #FFFFFF; }
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 300px; }
+
+.bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all; }
+
+.bar:before {
+  left: 50%; }
+
+.bar:after {
+  right: 50%; }
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width: 50%; }
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5; }
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease; }
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264AE; }
+  to {
+    width: 0;
+    background: transparent; } }
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE; }
+  to {
+    width: 0;
+    background: transparent; } }
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE; }
+  to {
+    width: 0;
+    background: transparent; } }
 
 /*# sourceMappingURL=styles.css.map */
