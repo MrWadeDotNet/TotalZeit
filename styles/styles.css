@@ -32,29 +32,29 @@ body {
   opacity: 0.5; }
 
 .sidebar_nav {
-  background-color: rgba(23, 23, 23, 0.2);
+  background-color: rgba(23, 23, 23, 0.4);
   width: 165px;
   height: 320px;
   padding: 10px;
   float: left;
   text-align: left;
   border-radius: 20px;
-  left: -1em; }
+  left: -2em; }
 
 .sidebar_txt {
   font-family: Roboto;
   font-size: 1em;
   color: #FFFFFF !important;
   padding-top: 20px;
-  padding-left: 15px;
+  padding-left: 50px;
   opacity: 1; }
 
-.sidebar_txt > ul {
-  list-style-type: none; }
+.sidebar_item {
+  padding-top: 20px; }
 
 .maincontent {
   background-color: rgba(23, 23, 23, 0.7);
-  width: 760px;
+  width: 960px;
   height: 600px;
   padding: 10px;
   float: left;
@@ -64,10 +64,10 @@ body {
 h1 {
   color: #FFFFFF; }
 
-.inviteform {
+.form {
   padding-top: 75px; }
 
-.inviteform > .group {
+.form > .group {
   text-align: center; }
 
 .enteremail {

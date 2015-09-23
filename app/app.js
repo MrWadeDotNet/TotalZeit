@@ -1,41 +1,32 @@
-var app = angular.module("TotalZeit", ["ngRoute", "firebase"]);
+var app = angular.module("TotalZeit", ["ngRoute","firebase"])
+.run([
+   "$firebaseAuth",
+   "$rootScope",
+  function($firebaseAuth, $rootScope){
+    var ref = new Firebase("https://total-zeit.firebaseio.com/");
+    this.auth = $firebaseAuth(ref);
+    $rootScope.user = ref.getAuth();
+    console.log($rootScope.user.uid);
+  }
+]);
 
-app.run(["$rootScope", "$location", function($rootScope, $location) {
-  $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
-    // We can catch the error thrown when the $requireAuth promise is rejected
-    // and redirect the user back to the home page
-    if (error === "AUTH_REQUIRED") {
-      $location.path("/login");
-    }
-  });
-}]);
-/*
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
-    templateUrl: 'partials/feed.html',
-    controller: 'MainCtrl',
-    resolve: {
-      // controller will not be loaded until $requireAuth resolves
-      // Auth refers to our $firebaseAuth wrapper in the example above
-      "currentAuth": ["Auth", function(Auth) {
-        // $requireAuth returns a promise so the resolve waits for it to complete
-        // If the promise is rejected, it will throw a $stateChangeError (see above)
-        return Auth.$requireAuth();
-      }]
-    }
-  }).when('/new', {
+    templateUrl: 'partials/main.html',
+    controller: 'MainCtrl'
+  }).when('/login', {
     templateUrl: 'partials/login.html',
-    controller: 'LoginCtrl',
-    resolve: {
-      "currentAuth": ["Auth", function(Auth) {
-        return Auth.$requireAuth();
-      }]
-    }
-  }
-*/
- // Login Controller 
+    controller: 'AuthCtrl'
+  }).when('/about', {
+    templateUrl: 'partials/about.html'
+  }).when('/signup', {
+    templateUrl: 'partials/signup.html',
+    controller: 'SignUpCtrl'
+  })
+  .otherwise({
+    redirectTo: '/'
+  });
 
-/*  .controller('LoginCtrl', function($scope) {
-  var projectList = this;
-  projectList.projects = projects;
-    })*/
+}]);
+
+
