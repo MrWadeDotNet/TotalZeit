@@ -6,7 +6,7 @@ var app = angular.module("TotalZeit", ["ngRoute","firebase"])
     var ref = new Firebase("https://total-zeit.firebaseio.com/");
     this.auth = $firebaseAuth(ref);
     $rootScope.user = ref.getAuth();
-    console.log($rootScope.user.uid);
+   // console.log($rootScope.user.uid);
   }
 ]);
 
@@ -22,6 +22,9 @@ app.config(['$routeProvider', function($routeProvider) {
   }).when('/signup', {
     templateUrl: 'partials/signup.html',
     controller: 'SignUpCtrl'
+  }).when('/editprofile', {
+    templateUrl: 'partials/editprofile.html',
+    controller: 'editProfileCtrl'
   })
   .otherwise({
     redirectTo: '/'

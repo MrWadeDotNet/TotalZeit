@@ -1,0 +1,146 @@
+  <!-- Sidebar navigation -->
+<div class="sidebar_nav col-md-2">
+  <div class="sidebar_txt">
+    <div id="about" class="sidebar_item"><a href="#/about" class="sidebar_item">About</a></div>
+    <div id="login" class="sidebar_item"><a href="#/login" class="sidebar_item">Login</a>/<a href="#/signup" class="sidebar_item">Signup</a></div>
+    <div id="create" class="sidebar_item">Create Flight</div>
+    <div id="profile" class="sidebar_item">Profile</div>
+  </div>
+</div>
+ <!--End Sidebar Nav -->
+
+ <div class="maincontent col-md-11 col-md-offset-1">
+<div class="row">
+   <div class="col-md-12 col-md-offset-3">
+      <h1>Set Up Your Profile</h1>
+    </div>
+</div>
+<hr>
+<div class="personalinfo">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2>Personal Information</h2>
+    </div>
+  </div>
+  <div class="row margin">
+      <div class="col-md-2 col-md-offset-2">
+       <input class="profile_form" type="text" ng-model="userInformation.fName" required autofocus>
+       <span class="highlight"></span>
+       <span class="bar profile_form"></span>
+       <label>First Name</label>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <input class="profile_form" type="text" ng-model="userInformation.lName" required autofocus>
+       <span class="highlight"></span>
+       <span class="bar profile_form"></span>
+       <label>Last Name</label>
+     </div>
+    </div>
+    <div class="row margin">
+      <div class="col-md-2 col-md-offset-1">
+      <input class="profile_form" type="text" ng-model="userInformation.street" required autofocus>
+      <span class="highlight"></span>
+      <span class="bar profile_form"></span>
+        <label>Street</label>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <input class="profile_form" type="text" ng-model="userInformation.state" required autofocus>
+       <span class="highlight"></span>
+       <span class="bar profile_form"></span>
+       <label>State</label>
+     </div>
+     <div class="col-md-2 col-md-offset-1">
+        <input class="profile_form" type="text" ng-model="userInformation.zip" required autofocus>
+       <span class="highlight"></span>
+       <span class="bar profile_form"></span>
+       <label>Zip</label>
+     </div>
+    </div>
+    <div class="row margin">
+      <div class="col-md-2 col-sm-offset-2">
+       <input class="profile_form" type="text" ng-model="userInformation.height" required autofocus>
+       <span class="highlight"></span>
+       <span class="bar profile_form"></span>
+       <label>Height(ft'inch)</label>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <input class="profile_form" type="text" ng-model="userInformation.weight" required autofocus>
+       <span class="highlight"></span>
+       <span class="bar profile_form"></span>
+       <label>Weight (lbs)</label>
+     </div>
+  </div>
+    <div class="row">
+      <div class="col-sm-1 col-md-offset-10 margin"> 
+       <button type="button" class="btn btn-success" ng-click="pilotInfo()">-></button>
+      </div>
+    </div>
+</div>
+<!-- Next page -->
+<div class="pilotinfo hide">
+  <div class="row">
+    <div class="col-md-7 col-md-offset-3">
+      <h2>Pilot Information</h2>
+    </div>
+  </div>
+  <div class="row margin">
+      <div class="col-md-2 col-md-offset-2">
+       <input class="profile_form" type="text" ng-model="userInformation.license" required autofocus>
+       <span class="highlight"></span>
+       <span class="bar profile_form"></span>
+       <label>License#</label>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <input class="profile_form" type="text" ng-model="userInformation.homeAirport" required autofocus>
+       <span class="highlight"></span>
+       <span class="bar profile_form"></span>
+       <label>Homebase ie. KJWN</label>
+     </div>
+    </div>
+    <div class="row margin">
+      <div class="col-md-2 col-md-offset-1">
+      <input class="profile_form" type="text" ng-model="userInformation.hoursPic" required autofocus>
+      <span class="highlight"></span>
+      <span class="bar profile_form"></span>
+        <label>Hours(PIC)</label>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <input class="profile_form" type="text" ng-model="userInformation.hoursTT" required autofocus>
+       <span class="highlight"></span>
+       <span class="bar profile_form"></span>
+       <label>Hours(TT)</label>
+     </div>
+     <div class="col-md-2 col-md-offset-1">
+       <select class="form-control" ng-model="userInformation.rating" required>
+          <option>Private</option>
+          <option>Commercial</option>
+          <option>Instructor (Single)</option>
+          <option>Instructor (Multi)</option>
+          <option>Sport</option>
+        </select>
+        <label>Highest Rating</label>
+     </div>
+    </div>
+    <div class="row margin">
+       <div class="col-md-2 col-md-offset-1">
+          Add-On Rating
+          <label class="checkbox-inline"> 
+           <input type="checkbox" id="MEL" value="MEL">Multi-Engine
+           </label>
+           <label class="checkbox-inline">
+            <input type="checkbox" id="Instrument" value="Instrument">Instrument
+            </label>
+            <label class="checkbox-inline">
+             <input type="checkbox" id="SEA" value="SEA">SEA
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1 margin"> 
+       <button type="button" class="btn btn-danger" ng-click="personalInfo()">Back</button>
+      </div>
+      <div class="col-sm-1 col-md-offset-9 margin"> 
+       <button type="button" class="btn btn-success" ng-click="submitToProfile()">Complete</button>
+      </div>
+    </div>
+  </div>
+</div>  

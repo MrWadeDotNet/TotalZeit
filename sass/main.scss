@@ -18,6 +18,10 @@ body  {
   color: #FFFFFF; 
 }
 
+a {
+  color: #FFFFFF;
+}
+
   @font-face {
   font-family: Roboto;
   src: url('fonts/Roboto-Regular.ttf') 
@@ -93,7 +97,6 @@ color: #FFFFFF;
   }
 
 
-
 .btn-style{
   border : solid 1px #ebebeb;
   border-radius : 11px 10px 10px 10px ;
@@ -122,6 +125,7 @@ input         {
   width:300px;
   border:none;
   border-bottom:1px solid #757575;
+  border-radius : 9px 10px 10px 10px ;
   color: #000000;
 }
 input:focus     { outline:none; }
@@ -129,11 +133,12 @@ input:focus     { outline:none; }
 /* LABEL ======================================= */
 label          {
   color:#999; 
-  font-size:18px;
+  font-size:14px;
   font-weight:normal;
-  position:absolute;
-  pointer-events:none;
-  left:5px;
+  //position:absolute;
+  text-align: center;
+ // pointer-events:none;
+  // left:5px;
   top:10px;
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
@@ -176,7 +181,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 .highlight {
   position:absolute;
   height:60%; 
-  width:100px; 
+  width: 50px; 
   top:25%; 
   left:0;
   pointer-events:none;
@@ -202,4 +207,17 @@ input:focus ~ .highlight {
 @keyframes inputHighlighter {
   from { background:#5264AE; }
   to  { width:0; background:transparent; }
+}
+
+.profile_form {
+  width: 150px;
+  font-size: 10px;
+}
+
+.margin {
+  margin-top: 35px;
+}
+
+.checkbox-inline+.checkbox-inline, .radio-inline+.radio-inline {
+  margin-left: 0px;
 }

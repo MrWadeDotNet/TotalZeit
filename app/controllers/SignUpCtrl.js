@@ -32,10 +32,7 @@ app.controller("SignUpCtrl",
           }
         } else {
           console.log("Successfully created user account with uid:", userData.uid);
-
-          // add to profile
-
-
+          $location.path('/#/editprofile');
         }
       });
   
