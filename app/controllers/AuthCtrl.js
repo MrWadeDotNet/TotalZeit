@@ -20,10 +20,10 @@ app.controller("AuthCtrl",
     };
 
     // Authenticates user to firebase data
-    $scope.auth = $firebaseAuth(ref);
+   // $scope.auth = $firebaseAuth(ref);
 
 
-    $scope.authData = null;
+   //$scope.authData = null;
     // Any time auth status updates, add the user data to scope
     $scope.auth.$onAuth(function(authData) {
       console.log("authData", authData);

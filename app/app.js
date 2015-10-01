@@ -29,7 +29,7 @@ var app = angular.module("TotalZeit", ["ngRoute","firebase"])
           $rootScope.currUserEmail = $rootScope.users[i].email;
           $rootScope.currUserUid = $rootScope.users[i].uid;
 
-          console.log($rootScope.currUserId);
+          console.log($rootScope.currUserDbId);
           console.log($rootScope.currUserEmail);
           console.log($rootScope.currUserUid);
 
@@ -57,10 +57,12 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: 'partials/editprofile.html',
     controller: 'editProfileCtrl'
   })
+  .when('/profile', {
+    templateUrl: 'partials/profile.html',
+    controller: 'ProfileCtrl'
+  })
   .otherwise({
     redirectTo: '/'
   });
 
 }]);
-
-
