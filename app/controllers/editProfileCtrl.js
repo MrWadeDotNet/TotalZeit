@@ -7,28 +7,15 @@ app.controller("editProfileCtrl",
    "$rootScope",
   function($scope,  $routeParams, $firebaseArray, $location, $firebaseAuth, $rootScope)  {
 
+    console.log($rootScope.currUserDbId);
 
-     var ref2 = new Firebase("https://total-zeit.firebaseio.com/profiles");
-    $scope.users = $firebaseArray(ref2);
-    
-
-    $scope.users.$loaded()
-    .then(function(){
-      for(var i=0; i<$scope.users.length; i++){
-        console.log($scope.user.uid, $scope.users[i].uid);
-        if($scope.users[i].uid===$scope.user.uid){
-          $scope.currentUser = $scope.users[i];
-          $rootScope.currentUserId = $scope.users[i].$id;
-          console.log($scope.currentUser);
-        }
-      }
-    });
-
-    var fbRef = new Firebase("https://total-zeit.firebaseio.com/profiles/" + $rootScope.currentUserId);
+    var fbRef = new Firebase("https://total-zeit.firebaseio.com/profiles/" + $rootScope.currUserDbId);
    // var editRef = new Firebase("https://total-zeit.firebaseio.com/profiles" + $
 // Data from firebase 
 
     $scope.userInformation = {
+      "uid" : $rootScope.currUserUid,
+      "email" : $rootScope.currUserEmail,
       "fName" : "",
       "lName" : "",
       "street" : "",
@@ -65,8 +52,11 @@ app.controller("editProfileCtrl",
 
     $scope.submitToProfile = function () {
 
+      console.log($scope.userInformation);
+
       fbRef.set($scope.userInformation, function () {
         console.log("Writing Data to Profile");
+        //will navigate to profile page.
       });
 
     };

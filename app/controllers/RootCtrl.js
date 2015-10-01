@@ -23,12 +23,12 @@ app.controller("RootCtrl",
     $scope.users.$loaded()
     .then(function(){
       for(var i=0; i<$scope.users.length; i++){
-        console.log($scope.user.uid, $scope.users[i].uid);
-        if($scope.users[i].uid===$scope.user.uid){
+/*        console.log($scope.user.uid, $scope.users[i].uid);
+*/        if($scope.users[i].uid===$scope.user.uid){
           $scope.currentUser = $scope.users[i];
           $rootScope.currentUserId = $scope.users[i].$id;
-          console.log($scope.currentUser);
-        }
+/*          console.log($scope.currentUser);
+*/        }
       }
     });
   }

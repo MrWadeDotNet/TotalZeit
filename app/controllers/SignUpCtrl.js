@@ -3,17 +3,19 @@ app.controller("SignUpCtrl",
    "$routeParams",
    "$firebaseObject",
    "$rootScope",
-  function($scope, $routeParams, $firebaseObject,$rootScope) {
+   "$location",
+  function($scope, $routeParams, $firebaseObject,$rootScope,$location) {
     var ref = new Firebase("https://total-zeit.firebaseio.com/");
 
 
-    console.log($routeParams)
 
     // Grabs user input from DOM
     $scope.user = {
       "email": "",
       "password": ""
     };
+
+
 console.log("Current User ID", $rootScope.currentUserId);
 
     // Adds new user to firebase authentication via email/password
