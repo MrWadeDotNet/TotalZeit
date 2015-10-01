@@ -1,7 +1,13 @@
-app.controller("MainCtrl", ["$scope", 
-  function($scope, $firebaseArray, currentAuth, $firebaseAuth, Auth, $location, $rootScope) {
-    console.log("User:", $rootScope.user);
-
-    $scope.userId = $rootScope.user;
+app.controller("MainCtrl", ["$scope",
+   "$routeParams",
+   "$firebaseArray",
+   "$location",
+   "$firebaseAuth",
+   "$rootScope",
+  function($scope,  $routeParams, $firebaseArray, $location, $firebaseAuth, $rootScope)  {
+/*
+$scope.uid=currentAuth.uid;
+console.log("Uid", uid);
+console.log("UserId (Scope)", $scope.uid);*/
 
 }]);

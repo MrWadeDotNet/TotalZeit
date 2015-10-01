@@ -6,7 +6,7 @@ var app = angular.module("TotalZeit", ["ngRoute","firebase"])
     var ref = new Firebase("https://total-zeit.firebaseio.com/");
     this.auth = $firebaseAuth(ref);
     $rootScope.user = ref.getAuth();
-   // console.log($rootScope.user.uid);
+  //  console.log($rootScope.user);
   }
 ]);
 

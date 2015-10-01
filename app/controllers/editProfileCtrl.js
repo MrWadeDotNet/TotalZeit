@@ -1,13 +1,34 @@
-app.controller("editProfileCtrl", ["$scope", 
-  function($scope, $firebaseArray, currentAuth, $firebaseAuth, Auth, $location, $rootScope) {
-  //  $scope.userId = $rootScope.user;
-    var fbRef = new Firebase("https://total-zeit.firebaseio.com/profiles");
+app.controller("editProfileCtrl", 
+  ["$scope",
+   "$routeParams",
+   "$firebaseArray",
+   "$location",
+   "$firebaseAuth",
+   "$rootScope",
+  function($scope,  $routeParams, $firebaseArray, $location, $firebaseAuth, $rootScope)  {
 
 
+     var ref2 = new Firebase("https://total-zeit.firebaseio.com/profiles");
+    $scope.users = $firebaseArray(ref2);
+    
 
+    $scope.users.$loaded()
+    .then(function(){
+      for(var i=0; i<$scope.users.length; i++){
+        console.log($scope.user.uid, $scope.users[i].uid);
+        if($scope.users[i].uid===$scope.user.uid){
+          $scope.currentUser = $scope.users[i];
+          $rootScope.currentUserId = $scope.users[i].$id;
+          console.log($scope.currentUser);
+        }
+      }
+    });
+
+    var fbRef = new Firebase("https://total-zeit.firebaseio.com/profiles/" + $rootScope.currentUserId);
+   // var editRef = new Firebase("https://total-zeit.firebaseio.com/profiles" + $
+// Data from firebase 
 
     $scope.userInformation = {
-      "userId" : "$scope.userId",
       "fName" : "",
       "lName" : "",
       "street" : "",
