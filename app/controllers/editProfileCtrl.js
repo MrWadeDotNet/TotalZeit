@@ -1,7 +1,7 @@
 app.controller("editProfileCtrl", ["$scope", 
   function($scope, $firebaseArray, currentAuth, $firebaseAuth, Auth, $location, $rootScope) {
-    $scope.userId = $rootScope.user;
-    var ref = new Firebase("https://total-zeit.firebaseio.com/profiles");
+  //  $scope.userId = $rootScope.user;
+    var fbRef = new Firebase("https://total-zeit.firebaseio.com/profiles");
 
 
 
@@ -23,26 +23,30 @@ app.controller("editProfileCtrl", ["$scope",
 
     };
 
- $scope.personalInfo = function () {
+      $scope.personalElement = angular.element( document.querySelector(".personalinfo"));
+      $scope.pilotElement = angular.element( document.querySelector(".pilotinfo"));
 
-      var personalElement = angular.element( document.querySelector(".personalinfo"));
-      var pilotElement = angular.element( document.querySelector(".pilotinfo"));
+    $scope.personalInfo = function () {
+
       
-      personalElement.removeClass("hide");
-      pilotElement.removeClass("show");
-      pilotElement.addClass("hide");
+      $scope.personalElement.removeClass("hide");
+      $scope.pilotElement.removeClass("show");
+      $scope.pilotElement.addClass("hide");
 
     };
 
 
     $scope.pilotInfo = function () {
 
-      var personalElement = angular.element( document.querySelector(".personalinfo"));
-      var pilotElement = angular.element( document.querySelector(".pilotinfo"));
-     
-      personalElement.addClass("hide");
-      pilotElement.addClass("show");
+      $scope.personalElement.addClass("hide");
+      $scope.pilotElement.addClass("show");
+    };
 
+    $scope.submitToProfile = function () {
+
+      fbRef.set($scope.userInformation, function () {
+        console.log("Writing Data to Profile");
+      });
 
     };
 
