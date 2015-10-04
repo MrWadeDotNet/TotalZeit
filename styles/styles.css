@@ -58,7 +58,6 @@ a {
 .maincontent {
   background-color: rgba(23, 23, 23, 0.7);
   width: 960px;
-  height: 600px;
   padding: 10px;
   float: left;
   text-align: left;
@@ -109,6 +108,29 @@ input {
 
 input:focus {
   outline: none; }
+
+/* TEXT AREA */
+textarea {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #757575;
+  border-radius: 9px 10px 10px 10px;
+  color: #000000; }
+
+input:focus {
+  outline: none; }
+
+textarea:focus ~ label, textarea:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #FFFFFF; }
+
+textarea:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease; }
 
 /* LABEL ======================================= */
 label {
@@ -191,6 +213,11 @@ input:focus ~ .highlight {
     background: transparent; } }
 .profile_form {
   width: 150px;
+  font-size: 10px; }
+
+.textarea {
+  width: 300px;
+  height: 145px;
   font-size: 10px; }
 
 .margin {

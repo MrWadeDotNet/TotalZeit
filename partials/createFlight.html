@@ -1,0 +1,84 @@
+  <!-- Sidebar navigation -->
+<div class="sidebar_nav col-md-2">
+  <div class="sidebar_txt">
+    <div id="about" class="sidebar_item"><a href="#/about" class="sidebar_item">About</a></div>
+    <div id="login" class="sidebar_item"><a href="#/login" class="sidebar_item">Login</a>/<a href="#/signup" class="sidebar_item">Signup</a></div>
+    <div id="create" class="sidebar_item"><a href="#/createFlight">Create Flight</a></div>
+    <div id="profile" class="sidebar_item"><a href="#/profile" class="sidebar_item">Profile</a></div>
+  </div>
+</div>
+ <!--End Sidebar Nav -->
+
+
+<div ng-controller="editProfileCtrl" ng-init=init()>
+ <div class="maincontent col-md-11 col-md-offset-1">
+<div class="row">
+   <div class="col-md-12 col-md-offset-3">
+      <h1><div class="ng-scope">Create A Flight</div></h1>
+    </div>
+</div>
+<hr>
+<div class="personalinfo">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2>Flight Information</h2>
+    </div>
+  </div>
+  <div class="row margin">
+    <form name="profileBuild">
+      <div class="col-md-2 col-md-offset-2">
+       <input class="profile_form" type="text" ng-model="flightInformation.origin" placeholder="KSFB" required autofocus>
+       <span class="highlight"></span>
+       <span class="bar profile_form"></span>
+       <label>Origin Airport</label>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <input class="profile_form" type="text" ng-model="flightInformation.destination" placeholder="KSFB" required autofocus>
+       <span class="highlight"></span>
+       <span class="bar profile_form"></span>
+       <label>Destination Airport</label>
+     </div>
+     <div class="col-md-2 col-md-offset-1">
+       <input class="profile_form" type="text" ng-model="flightInformation.hours" placeholder="1.5" required autofocus>
+       <span class="highlight"></span>
+       <span class="bar profile_form"></span>
+       <label>Approximate Hours</label>
+     </div>
+ </div>
+    <div class="row margin">
+       <div class="col-md-2 col-md-offset-2">
+         <input class="profile_form" type="text" ng-model="flightInformation.aircraftType" placeholder="C172" required autofocus>
+         <span class="highlight"></span>
+         <span class="bar profile_form"></span>
+         <label>Aircraft Type</label>
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <input class="profile_form" type="text" ng-model="flightInformation.aircraftId"  placeholder="N12345" required autofocus>
+         <span class="highlight"></span>
+         <span class="bar profile_form"></span>
+         <label>Aircraft Identifer</label>
+       </div>
+        <div class="col-md-2 col-md-offset-1">
+           <input class="profile_form" type="date" name="input" ng-model="flightInformation.scheduledDate" placeholder="yyyy-MM-dd" min="2013-01-01" max="2020-12-31" required />
+             <label>Scheduled Date</label>
+      </div>
+  </div>
+   <div class="row margin">
+      <div class="col-md-2 col-md-offset-2">
+         <input class="profile_form" type="text" ng-model="flightInformation.maxWeight" placeholder="212" required autofocus>
+         <span class="highlight"></span>
+         <span class="bar profile_form"></span>
+         <label>Max Weight(lbs)</label>
+     </div>
+     <div class="col-md-2 col-md-offset-1">
+         <textarea class="textarea" ng-model="flightInformation.description" prequired autofocus></textarea>
+         <span class="highlight"></span>
+         <span class="bar profile_form"></span>
+         <label>Description of Flight</label>
+     </div>
+  </div>
+  <div class="row">
+  <div class="col-sm-1 col-md-offset-10 margin"> 
+   <button type="button" class="btn btn-success" ng-click="createFlight()">Submit Flight</button>
+  </div>
+</div>

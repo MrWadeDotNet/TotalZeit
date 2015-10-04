@@ -60,6 +60,9 @@ app.config(['$routeProvider', function($routeProvider) {
   .when('/profile', {
     templateUrl: 'partials/profile.html',
     controller: 'ProfileCtrl'
+  }).when('/createFlight', {
+    templateUrl: 'partials/createFlight.html',
+    controller: 'FlightCtrl'
   })
   .otherwise({
     redirectTo: '/'
