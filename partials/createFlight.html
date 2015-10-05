@@ -4,19 +4,19 @@
     <div id="about" class="sidebar_item"><a href="#/about" class="sidebar_item">About</a></div>
     <div id="login" class="sidebar_item"><a href="#/login" class="sidebar_item">Login</a>/<a href="#/signup" class="sidebar_item">Signup</a></div>
     <div id="create" class="sidebar_item"><a href="#/createFlight">Create Flight</a></div>
+    <div id="view" class="sidebar_item"><a href="#/viewFlights">View Flights</a></div>
     <div id="profile" class="sidebar_item"><a href="#/profile" class="sidebar_item">Profile</a></div>
   </div>
 </div>
  <!--End Sidebar Nav -->
 
-
-<div ng-controller="editProfileCtrl" ng-init=init()>
+<div ng-controller="FlightCtrl">
  <div class="maincontent col-md-11 col-md-offset-1">
-<div class="row">
-   <div class="col-md-12 col-md-offset-3">
+    <div class="row">
+      <div class="col-md-12 col-md-offset-3">
       <h1><div class="ng-scope">Create A Flight</div></h1>
     </div>
-</div>
+    </div>
 <hr>
 <div class="personalinfo">
   <div class="row">
@@ -59,7 +59,7 @@
          <label>Aircraft Identifer</label>
        </div>
         <div class="col-md-2 col-md-offset-1">
-           <input class="profile_form" type="date" name="input" ng-model="flightInformation.scheduledDate" placeholder="yyyy-MM-dd" min="2013-01-01" max="2020-12-31" required />
+           <input class="profile_form" type="date" ng-model="date" min="{{minDate | date:'2013-01-01'}}" max="{{maxDate | date:'2020-12-31'}}" id="date" />
              <label>Scheduled Date</label>
       </div>
   </div>
@@ -81,4 +81,5 @@
   <div class="col-sm-1 col-md-offset-10 margin"> 
    <button type="button" class="btn btn-success" ng-click="createFlight()">Submit Flight</button>
   </div>
+</div>
 </div>

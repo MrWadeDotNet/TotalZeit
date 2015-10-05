@@ -10,26 +10,25 @@
 </div>
  <!--End Sidebar Nav -->
 
-
-<div ng-controller="ProfileCtrl">
- <div class="maincontent col-md-11 col-md-offset-1">
-<div class="row">
-   <div class="col-md-12 col-md-offset-4">
-      <h1><div class="ng-scope">Profile Information</div></h1>
+<div ng-controller="FlightCtrl">
+     <div class="maincontent col-md-11 col-md-offset-1">
+        <div class="row">
+          <div class="col-md-12 col-md-offset-3">
+          <h1><div class="ng-scope">Create A Flight</div></h1>
+        </div>
+        </div>
+    <hr>
+      <div class="personalinfo">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <h2>View Flights</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-1" ng-init="viewFlights()">
+          <div ng-repeat="flight in flights">{{flight.date}}</div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-<hr>
-<div class="personalinfo">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-4">
-    <h2>{{userData.fName}} {{userData.lName}}</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-1">
-    Total Hours: {{userData.hoursTT}}
-    </div>
-  </div>
-
-  </div>
 </div>
