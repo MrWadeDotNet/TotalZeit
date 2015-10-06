@@ -11,23 +11,15 @@
 </div>
  <!--End Sidebar Nav -->
 
-
 <div ng-controller="FlightCtrl">
      <div class="maincontent col-md-11 col-md-offset-1">
         <div class="row">
           <div class="col-md-12 col-md-offset-4">
-          <h1><div class="ng-scope">Create A Flight</div></h1>
+          <h1><div class="ng-scope">My Flights</div></h1>
         </div>
         </div>
     <hr>
-      <div class="personalinfo">
-        <div class="row">
-          <div class="col-md-12">
-            <center><h2>Posted Flights</h2></center>
-            <hr>
-          </div>
-        </div>
-        <div class="row margin">
+          <div class="row margin">
           <div class="col-md-1">Date</div>
           <div class="col-md-2">Sponsor</div>
           <div class="col-md-1">Origin</div>
@@ -37,18 +29,8 @@
           <div class="col-md-2">Est Cost</div>
           <div class="col-md-2">Assigned</div>
         </div>
-        <div class="row margin" ng-init="viewFlights()">
-          <div ng-repeat="flight in flights">
-            <div class="col-md-1">{{flight.date}}</div>
-            <div class="col-md-2">{{flight.createdBy}}</div>
-            <div class="col-md-1">{{flight.origin}}</div>
-            <div class="col-md-1">{{flight.destination}}</div>
-            <div class="col-md-1">{{flight.hours}}</div>
-            <div class="col-md-2">{{flight.maxWeight}}lbs</div>
-            <div class="col-md-2">${{flight.cost}}</div>
-            <div class="col-md-2" ng-if="flight.assigned">{{flight.assignedUser}}</div>
-            <div class="col-md-2" ng-if="!flight.assigned"><button type="button" class="btn btn-success assign-btn" ng-click="assignFlight(flight.$id)">Assign</button></div>
-        </div>
+        <div class="row margin" ng-init="viewAssignedFlights()">
+         
       </div>
     </div>
 </div>

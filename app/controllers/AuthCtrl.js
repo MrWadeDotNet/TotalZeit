@@ -5,7 +5,8 @@ app.controller("AuthCtrl",
    "$location",
    "$firebaseAuth",
    "$rootScope",
-  function($scope,  $routeParams, $firebaseArray, $location, $firebaseAuth, $rootScope) {
+   "$location",
+  function($scope,  $routeParams, $firebaseArray, $location, $firebaseAuth, $rootScope, $location) {
     
     //Users variable in Firebase 
     var profileRef = new Firebase("https://total-zeit.firebaseio.com/profiles");
@@ -19,15 +20,12 @@ app.controller("AuthCtrl",
       "password": ""
     };
 
-    // Authenticates user to firebase data
-   // $scope.auth = $firebaseAuth(ref);
 
 
    //$scope.authData = null;
-    // Any time auth status updates, add the user data to scope
+
     $scope.auth.$onAuth(function(authData) {
       console.log("authData", authData);
-      //changes the profile picture based on how user is logged in
       $rootScope.authData = authData;
       $scope.userId = authData.uid;
       $rootScope.user = authData;
@@ -61,7 +59,7 @@ app.controller("AuthCtrl",
             console.log(userObj);
             $scope.users.$add(userObj);
           }
-          location.reload();
+          $location.path('/#/profile');
           $rootScope.user = $scope.authData;
         }
       });

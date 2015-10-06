@@ -216,14 +216,31 @@ input:focus ~ .highlight {
   font-size: 10px; }
 
 .textarea {
-  width: 300px;
+  width: 250px;
   height: 145px;
   font-size: 10px; }
 
 .margin {
   margin-top: 35px; }
 
+.margin_b {
+  margin-top: 10px; }
+
 .checkbox-inline + .checkbox-inline, .radio-inline + .radio-inline {
   margin-left: 0px; }
+
+.ng-hide {
+  /* this is just another form of hiding an element */
+  display: block !important;
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
+
+.assign-btn {
+  padding: 0px 5px 0px 0px;
+  font-size: 100%; }
+
+.font_a {
+  color: #009900; }
 
 /*# sourceMappingURL=styles.css.map */

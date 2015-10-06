@@ -10,26 +10,47 @@
 </div>
  <!--End Sidebar Nav -->
 
-
 <div ng-controller="ProfileCtrl">
- <div class="maincontent col-md-11 col-md-offset-1">
-<div class="row">
-   <div class="col-md-12 col-md-offset-4">
-      <h1><div class="ng-scope">Profile Information</div></h1>
-    </div>
-</div>
-<hr>
-<div class="personalinfo">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-4">
-    <h2>{{userData.fName}} {{userData.lName}}</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-1">
-    Total Hours: {{userData.hoursTT}}
-    </div>
-  </div>
+  <div class="maincontent col-md-11 col-md-offset-1">
+      <div class="row">
+         <div class="col-md-12 col-md-offset-4">
+            <h1><div class="ng-scope">Profile Information</div></h1>
+          </div>
+      </div>
+      <hr>
 
-  </div>
+        <div class="row">
+          <div class="col-md-12 col-md-offset-4">
+          <h2>{{userData.fName}} {{userData.lName}}</h2>
+          </div>
+        </div>
+
+        <div class="row margin">
+        </div>
+        <div class="row margin_b">
+          <div class="col-md-2">Address: </div> 
+          <div class="col-md-2 font_a"> {{userData.street}} {{userData.state}} {{userData.zip}}</div>
+        <div class="col-md-2">Homebase: </div> 
+        <div class="col-md-2 font_a"> {{userData.homeAirport}}</div>
+        </div>
+        <hr>
+        <div class="row margin_b"> 
+          <div class="col-md-2">License#: </div>
+          <div class="col-md-2 font_a">{{userData.license}}</div>
+          <div class="col-md-2">Pilot In Command: </div> 
+         <div class="col-md-2 font_a"> {{userData.hoursPic}}</div>
+        </div>
+       <hr>
+        <div class="row margin_b">
+          <div class="col-md-2">Height: </div>
+          <div class="col-md-2 font_a">{{userData.height}}</div>
+          <div class="col-md-2">Total Time: </div> 
+          <div class="col-md-2 font_a"> {{userData.hoursTT}}</div>
+        </div>
+      <hr>
+        <div class="row margin_b">
+          <div class="col-md-2">Weight: </div>
+          <div class="col-md-2 font_a">{{userData.weight}}lbs</div>
+        </div>
+    </div>
 </div>
